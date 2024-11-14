@@ -34,26 +34,26 @@ const Home = () => {
 
   return (
     <>
-      <section className="relative flex h-screen w-full">
-        <div className="absolute inset-x-0 top-20 flex items-start justify-between px-10 z-10">
-          <div className="text-start pl-10">
-            <h1 className="text-7xl text-black font-bold leading-tight">
-              Have a shining <br /> smile with our
+      {/* good */}
+      <section className="relative flex flex-col lg:flex-row h-screen w-full">
+        <div className="absolute inset-x-0 top-20 flex items-start justify-between px-6 sm:px-10 z-10 flex-col lg:flex-row lg:px-10">
+          <div className="text-start pl-10 mb-10 lg:mb-0">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl text-black font-bold leading-tight">
+              Have a shining <br className="hidden sm:block" /> smile with our
             </h1>
-            <h1 className="text-7xl text-custom-primary font-bold leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl text-custom-primary font-bold leading-tight">
               modern methods!
             </h1>
-            <div className="mt-16 flex items-center p-2 border-t-4 border-custom-green shadow-xl max-w-56 rounded-md">
+
+            <div className="mt-16 flex items-center p-2 border-t-4 border-custom-green shadow-xl max-w-56 rounded-md sticky top-0">
               <img src={GLogo} alt="Google logo" className="h-10" />
-              <span className="flex flex-col">
+              <span className="flex flex-col ml-2">
                 <h1 className="font-semibold text-gray-600">Google Rating</h1>
                 <span className="flex items-center gap-2">
                   <h1 className="text-custom-primary font-bold text-xl">4.8</h1>
                   <img src={GRating} alt="Rating icon" className="h-4" />
                 </span>
-                <p className="text-xs text-gray-400 cursor-pointer">
-                  See all our reviews
-                </p>
+                <p className="text-xs text-gray-400 cursor-pointer">See all our reviews</p>
               </span>
             </div>
           </div>
@@ -68,162 +68,174 @@ const Home = () => {
               <img src={ExpDoc3} alt="Expert Doctor 3" className="h-12" />
             </span>
             <p className="text-sm">
-              We take meticulous care of your dental needs to ensure a healthy,
-              lasting smile.
+              We take meticulous care of your dental needs to ensure a healthy, lasting smile.
             </p>
           </div>
         </div>
 
-        <div className="w-1/4 bg-white flex items-center justify-start p-10" />
+        <div className="w-full lg:w-1/4 bg-white flex items-center justify-start p-6 lg:p-10"></div>
 
-        <div className="w-3/4 relative">
+        <div className="w-full lg:w-3/4 relative">
           <img src={HomeImg} alt="Dental care promotion" className="object-cover w-full h-full" />
         </div>
       </section>
 
-      <section className="absolute inset-x-0 top-[115vh] -translate-y-1/2 flex items-center justify-center z-30">
-        <div className="flex justify-between px-20 w-[90%] bg-white p-10 border-2 text-black text-center h-36 rounded-lg shadow-xl">
+
+
+
+      {/* Not Okay */}
+      <section className="absolute inset-x-0 top-[115vh] -translate-y-1/2 flex items-center justify-center z-30 px-6 md:px-12">
+        <div className="flex flex-col md:flex-row justify-between items-center px-6 md:px-10 w-full max-w-screen-xl bg-white p-8 md:p-12 border-2 text-black text-center h-auto rounded-lg shadow-lg">
           {highlights.map((list) => (
-            <div key={list.id} className='flex justify-between gap-8 items-center text-start'>
-            <img src={list.photo} alt="icons" className='h-14' />
-            <span className='flex flex-col'>
-              <h1 className='text-4xl font-bold text-custom-primary'>{list.count}</h1>
-              <p className='text-gray-700 font-thin'>{list.title}</p>
-            </span>
-          </div>
+            <div key={list.id} className="flex flex-col md:flex-row justify-center md:justify-start gap-6 md:gap-12 items-center md:items-start w-full">
+              <img src={list.photo} alt="icons" className="h-16 md:h-20" />
+              <span className="flex flex-col items-center md:items-start">
+                <h1 className="text-3xl md:text-5xl font-extrabold text-custom-primary leading-tight">{list.count}</h1>
+                <p className="text-lg md:text-xl text-gray-700 font-light mt-2">{list.title}</p>
+              </span>
+            </div>
           ))}
         </div>
       </section>
+    <div className="w-full h-[30vh] bg-black relative"></div>
 
-      <div className="w-full h-[30vh] bg-black relative"></div>
 
+
+
+      {/* Okay */}
       <section className="relative flex min-h-screen w-full">
         <div className="text-start w-full py-20">
-          <h1 className='text-5xl font-bold px-20'>Transform your smile with <br />
-            veneers, whitening, and implants.</h1>
-          <p className='my-10 font-sans text-xl font-semibold text-gray-500 px-20'>Lorem Ipsum available, but the majority have suffered alteration in some form,<br /> by injected humour, or randomised words which don't look even</p>
-          <div className="grid grid-cols-5 gap-5 w-full px-20">
+          <h1 className="text-3xl sm:text-5xl font-bold px-6 sm:px-20">
+            Transform your smile with <br />
+            veneers, whitening, and implants.
+          </h1>
+          <p className="my-10 font-sans text-xl sm:text-2xl font-semibold text-gray-500 px-6 sm:px-20">
+            Lorem Ipsum available, but the majority have suffered alteration in some form,<br />
+            by injected humour, or randomised words which don't look even
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 w-full px-6 sm:px-20">
             {services.map((item) => (
-              <div key={item.id} className="flex flex-col items-center gap-3 py-10 p-4 bg-custom-floral-white rounded-lg">
-                <img src={item.icon} alt="icons" className='h-20 mb-2' />
-                <h1 className="text-lg font-bold">{item.title}</h1>
+              <div
+                key={item.id}
+                className="flex flex-col items-center gap-3 py-10 p-4 bg-custom-floral-white rounded-lg"
+              >
+                <img src={item.icon} alt="icons" className="h-16 sm:h-20 mb-2" />
+                <h1 className="text-sm sm:text-lg font-bold">{item.title}</h1>
               </div>
             ))}
           </div>
         </div>
       </section>
-
-      <div className="w-full py-20 h-[60vh] flex flex-col  gap-5 items-center bg-black relative">
-        <h1 className='text-white text-5xl font-bold'>Meet Our Team</h1>
-        <p className='text-gray-400'>Lorem Ipsum available, but the majority have suffered alteration in some form,<br /> by injected humour, or randomised words which don't look even</p>
+      <div className="w-full py-20 h-[50vh] sm:h-[60vh] flex flex-col gap-5 items-center bg-black relative">
+        <h1 className="text-white text-3xl sm:text-5xl font-bold">Meet Our Team</h1>
+        <p className="text-gray-400 text-sm sm:text-base">
+          Lorem Ipsum available, but the majority have suffered alteration in some form,<br />
+          by injected humour, or randomised words which don't look even
+        </p>
       </div>
 
+
+
+      {/* Not Okay   */}
       <section className="absolute inset-x-0 top-[330vh] -translate-y-1/2 flex flex-col items-center justify-center z-30">
         <div className="text-start w-full py-20">
-          <div className="grid grid-cols-4 gap-5 w-full px-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full px-6 sm:px-10 lg:px-20">
             {doctors.map((doc) => (
-              <div 
-                key={doc.id} 
-                className="flex flex-col items-center gap-3 p-4 rounded-lg"
-              >
+              <div key={doc.id} className="flex flex-col items-center gap-3 p-4 rounded-lg">
                 <div
-                  className="w-[300px] h-[400px] bg-cover bg-center rounded-lg"
+                  className="w-[250px] sm:w-[280px] lg:w-[300px] h-[350px] sm:h-[380px] lg:h-[400px] bg-cover bg-center rounded-lg"
                   style={{
                     backgroundImage: `url(${doc.photo})`,
                   }}
                 ></div>
                 <div className="mt-4 text-center">
-                  <h1 className="text-2xl font-bold">{doc.name}</h1>
-                  <p className="text-lg text-gray-500">{doc.speciality}</p>
+                  <h1 className="text-xl sm:text-2xl font-bold">{doc.name}</h1>
+                  <p className="text-sm sm:text-lg text-gray-500">{doc.speciality}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <button className='px-5 py-2 text-lg font-semibold rounded-md bg-custom-primary text-white'>View All Items</button>
+        <button className="px-5 py-2 text-lg font-semibold rounded-md bg-custom-primary text-white mt-6">
+          View All Items
+        </button>
       </section>
 
+
+
+      {/* okay */}
       <section className="relative flex flex-col min-h-screen w-full mt-[60vh]">
-        <div className="flex text-start w-full py-20">
-          <div className='flex w-1/2'>
-            <h1 className="text-5xl font-bold px-20">Exclusive <br />Monthly Dental Offers</h1>
+        <div className="flex flex-col md:flex-row w-full py-20 px-6 md:px-20">
+          <div className="flex w-full md:w-1/2 mb-6 md:mb-0">
+            <h1 className="text-4xl md:text-5xl font-bold text-custom-primary leading-tight">
+              Exclusive <br />Monthly Dental Offers
+            </h1>
           </div>
-          <div className='flex w-1/2'>
-            <p className="my-10 font-sans text-lg font-semibold text-gray-400 px-20">
+          <div className="flex w-full md:w-1/2">
+            <p className="my-10 font-sans text-lg font-semibold text-gray-400">
               Unlock your smile’s potential with our exclusive <br />
               dental offers for this month
             </p>
           </div>
         </div>
-        <div>
-          <div className="grid grid-cols-3 gap-5 w-full px-20">
-            {offers.map((offer) => (
-              <div key={offer.id} className="flex flex-col items-center gap-4 py-10 p-4 bg-custom-floral-white rounded-lg">
-                <img src={offer.photo} alt="icons" className='h-56 mb-2' />
-                <h1 className="text-lg font-bold">{offer.title}</h1>
-                <h1 className="text-4xl font-bold text-custom-primary">{offer.price} AED</h1>
-                <hr className='w-full' />
-                <h1 className='font-semibold text-gray-600'>{offer.Decription1}</h1>
-                <hr className='w-full' />
-                <h1 className='font-semibold text-gray-600'>{offer.Decription2}</h1>
-                <hr className='w-full' />
-                <h1 className='font-semibold text-gray-600'>{offer.Decription3}</h1>
-                <button className='mt-3 px-5 py-2 rounded-md bg-black text-white'>MAKE AN APPOINTMENT</button>
-              </div>
-            ))}
-          </div>
-          <div className="overflow-hidden py-10">
-            <span className="flex flex-row justify-start items-center gap-8 animate-marquee">
-              <h1 className='text-2xl font-semibold'>General Denistry</h1><img src={star} alt="star" className='h-5' />
-              <h1 className='text-2xl font-semibold'>Cosmetic Dentistry</h1><img src={star} alt="star" className='h-5' />
-              <h1 className='text-2xl font-semibold'>Teeth Whitening</h1><img src={star} alt="star" className='h-5' />
-              <h1 className='text-2xl font-semibold'>Gum Treatment</h1><img src={star} alt="star" className='h-5' />
-              <h1 className='text-2xl font-semibold'>Root Canal Treatment</h1><img src={star} alt="star" className='h-5' />
-            </span>
-          </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-20">
+          {offers.map((offer) => (
+            <div
+              key={offer.id}
+              className="flex flex-col items-center gap-4 py-10 p-4 bg-custom-floral-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+            >
+              <img src={offer.photo} alt="icons" className="h-56 mb-4 object-cover" />
+              <h1 className="text-lg font-bold">{offer.title}</h1>
+              <h1 className="text-3xl font-bold text-custom-primary">{offer.price} AED</h1>
+              <hr className="w-full my-2" />
+              <h1 className="font-semibold text-gray-600">{offer.Decription1}</h1>
+              <hr className="w-full my-2" />
+              <h1 className="font-semibold text-gray-600">{offer.Decription2}</h1>
+              <hr className="w-full my-2" />
+              <h1 className="font-semibold text-gray-600">{offer.Decription3}</h1>
+              <button className="mt-4 px-6 py-3 rounded-md bg-black text-white hover:bg-gray-800 transition-colors duration-300">
+                MAKE AN APPOINTMENT
+              </button>
+            </div>
+          ))}
+        </div>
+        <div className="overflow-hidden py-10">
+          <span className="flex flex-row justify-start items-center gap-8 animate-marquee">
+            <h1 className="text-2xl font-semibold">General Dentistry</h1>
+            <img src={star} alt="star" className="h-5" />
+            <h1 className="text-2xl font-semibold">Cosmetic Dentistry</h1>
+            <img src={star} alt="star" className="h-5" />
+            <h1 className="text-2xl font-semibold">Teeth Whitening</h1>
+            <img src={star} alt="star" className="h-5" />
+            <h1 className="text-2xl font-semibold">Gum Treatment</h1>
+            <img src={star} alt="star" className="h-5" />
+            <h1 className="text-2xl font-semibold">Root Canal Treatment</h1>
+            <img src={star} alt="star" className="h-5" />
+          </span>
         </div>
       </section>
-
       <section className="relative z-40 flex flex-col min-h-screen bg-custom-primary w-full">
-        <div className="flex text-start w-full py-24">
-          <div className='w-1/3'>
-            <img src={ReviewBanner} alt="" className='h-[400px] ml-20 rounded-xl' />
+        <div className="flex flex-col lg:flex-row w-full py-24 px-6 md:px-20">
+          <div className="w-full lg:w-1/3 mb-12 lg:mb-0 lg:ml-20">
+            <img src={ReviewBanner} alt="Review Banner" className="w-full h-[400px] rounded-xl object-cover" />
           </div>
-
-          <div className='w-2/3'>
-            <h1 className='mt-20 ml-28 text-white text-6xl font-bold'>
+          <div className="w-full lg:w-2/3 mt-12 lg:mt-0 lg:ml-28">
+            <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight">
               500+ Happy clients said <br /> to us they are satisfied
             </h1>
-            <div className='flex gap-10 mt-24 '>
-            {reviews.map((user) => (
-              <div key={user.id} className="p-10 w-96 bg-gray-100 rounded-2xl shadow-xl">
-                <p className='pb-10'>{user.comment}</p>
-                <hr className='w-full' />
-                <div className="flex mt-4 items-center gap-4"> 
-                  <img src={user.photo} alt={user.name} className="h-12 w-12 rounded-full" />
-                  <div className="flex flex-col">
-                    <h1 className="font-semibold">{user.name}</h1>
-                    <p className="text-sm text-gray-400">{user.country}</p>
+            <div className="flex flex-col lg:flex-row gap-10 mt-16">
+              {reviews.map((user) => (
+                <div key={user.id} className="p-6 w-full lg:w-96 bg-gray-100 rounded-2xl shadow-xl flex flex-col">
+                  <p className="pb-6 text-gray-700">{user.comment}</p>
+                  <hr className="w-full border-gray-300" />
+                  <div className="flex mt-4 items-center gap-4">
+                    <img src={user.photo} alt={user.name} className="h-12 w-12 rounded-full" />
+                    <div className="flex flex-col">
+                      <h1 className="font-semibold">{user.name}</h1>
+                      <p className="text-sm text-gray-400">{user.country}</p>
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className='relative z-40 flex flex-col min-h-screen w-full'>
-        <div className='w-full py-24'>
-          <div className='flex flex-col gap-10'>
-            <h1 className='text-6xl font-bold'>Our Insurance Partners</h1>
-            <p className='font-semibold text-gray-500'>Conveniently pay for your dental treatments with your insurance. <br />
-            We accept major insurance providers.</p>
-
-            <div className="grid grid-cols-6  px-20 place-items-center">
-              {insurances.map((insurance) => (
-                <div key={insurance.id} className="flex justify-center items-center border w-full h-32">
-                  <img src={insurance.photo} alt="icons" className="h-20 w-20 object-contain" />
                 </div>
               ))}
             </div>
@@ -231,19 +243,53 @@ const Home = () => {
         </div>
       </section>
 
+
+
+      {/* Okay */}
       <section className='relative z-40 flex flex-col min-h-screen w-full'>
-        <div className='w-full py-24'>
-          <div className='flex px-20 justify-between w-full gap-10'>
-            <h1 className='text-6xl font-bold'>See Our Latest Blogs!</h1>
-            <button className='text-xl mt-3 px-5 py-2 rounded-md bg-custom-primary text-white'>View All</button>
+        <div className='w-full py-24 px-6 md:px-20'>
+          <div className='flex flex-col gap-10'>
+            <h1 className='text-4xl md:text-6xl font-bold text-center'>
+              Our Insurance Partners
+            </h1>
+            <p className='font-semibold text-gray-500 text-center'>
+              Conveniently pay for your dental treatments with your insurance. <br />
+              We accept major insurance providers.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 place-items-center mt-12">
+              {insurances.map((insurance) => (
+                <div key={insurance.id} className="flex justify-center items-center border w-full h-32 p-4 rounded-lg shadow-lg">
+                  <img src={insurance.photo} alt="insurance logo" className="h-16 w-16 object-contain" />
+                </div>
+              ))}
+            </div>
           </div>
-          <div className='py-16 grid grid-cols-4 gap-5 px-20 text-start'>
+        </div>
+      </section>
+
+
+
+
+      {/* Okay */}
+      <section className='relative z-40 flex flex-col min-h-screen w-full'>
+        <div className='w-full py-24 px-6 md:px-20'>
+          <div className='flex flex-col md:flex-row justify-between w-full gap-10'>
+            <h1 className='text-4xl md:text-6xl font-bold text-center md:text-left'>
+              See Our Latest Blogs!
+            </h1>
+            <button className='text-xl mt-3 px-5 py-2 rounded-md bg-custom-primary text-white self-center md:self-start'>
+              View All
+            </button>
+          </div>
+          <div className='py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
             {blogs.map((blog) => (
-              <div key={blog.id}>
-                <img src={blog.photo} alt="blog-image" className='rounded-xl' />
-                <h1 className='mt-5 text-md font-bold'>{blog.title}</h1>
-                <p className='py-3 text-gray-700'>{blog.description}</p>
-                <a href="#" className='underline'>READ MORE</a>
+              <div key={blog.id} className='flex flex-col bg-white rounded-xl shadow-lg'>
+                <img src={blog.photo} alt="blog-image" className='rounded-t-xl object-cover h-56 w-full' />
+                <div className='px-5 py-4'>
+                  <h1 className='text-xl font-semibold'>{blog.title}</h1>
+                  <p className='py-3 text-gray-700'>{blog.description}</p>
+                  <a href="#" className='text-custom-primary font-semibold underline'>READ MORE</a>
+                </div>
               </div>
             ))}
           </div>
@@ -251,53 +297,63 @@ const Home = () => {
       </section>
 
 
-      <section className='relative z-40 flex flex-col min-h-screen w-full'>
-            <div className='w-full'>
-                <div className='flex px-20 justify-between w-full gap-10'>
-                    <h1 className='text-6xl font-bold mb-20'>FAQs</h1>
-                </div>
-                {faqs.map((item) => (
-                    <div key={item.id} className='flex mt-3 justify-between items-center mx-20 p-10 rounded-2xl text-start border-2 border-gray-100'>
-                        <div className='flex flex-col gap-5 w-3/4'>
-                            <h1 className='text-3xl text-gray-600 font-semibold'>{item.question}</h1>
-                            <div
-                                className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                                    showAnswer === item.id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                                }`}
-                            >
-                                {showAnswer === item.id && (
-                                    <p className='text-lg'>{item.answer}</p>
-                                )}
-                            </div>
-                        </div>
-                        <div className='w-1/4 flex items-center justify-end'>
-                            <button
-                                onClick={() => handleShowAnswer(item.id)}
-                                className="w-20 h-20 bg-custom-primary text-white rounded-full flex items-center justify-center"
-                            >
-                                <span className="text-4xl">{showAnswer === item.id ? '-' : '+'}</span>
-                            </button>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </section>
 
-        <section className='relative z-40 flex flex-col max-h-screen w-full mt-36'>
-          <div className='w-full mb-28 px-20'>
-            <img src={BottomBanner} alt="Bottom Banner" className="w-full" />
-            <div className='absolute top-0 p-20 text-start'>
-              <h1 className='text-5xl text-white font-bold'>Book an Appointment With <br />
-              Your Doctor NOW!</h1>
-              <p className='mt-10 text-xl font-semibold text-gray-200'>Conveniently pay for your dental treatments with your insurance. <br />
-              We accept major insurance providers.</p>
-              <button className='mt-5 px-5 text-xl py-2 rounded-md bg-black text-white'>BOOK NOW</button>
-            </div>
-            <div className='absolute top-[-90px] right-0'>
-              <img src={BottomBannerGirl} alt="Bottom Banner Girl" className='h-[520px]' />
-            </div>
+      {/* Okay */}
+      <section className='relative z-40 flex flex-col min-h-screen w-full'>
+        <div className='w-full'>
+          <div className='flex flex-col px-6 md:px-20 justify-between w-full gap-10'>
+            <h1 className='text-4xl md:text-6xl font-bold mb-10 text-center md:text-left'>FAQs</h1>
+
+            {faqs.map((item) => (
+              <div key={item.id} className='flex flex-col md:flex-row justify-between items-center mx-6 md:mx-20 p-6 md:p-10 mb-6 rounded-2xl text-start border-2 border-gray-100'>
+                <div className='flex flex-col gap-5 w-full md:w-3/4'>
+                  <h1 className='text-2xl md:text-3xl text-gray-600 font-semibold'>{item.question}</h1>
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${showAnswer === item.id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                  >
+                    {showAnswer === item.id && (
+                      <p className='text-lg'>{item.answer}</p>
+                    )}
+                  </div>
+                </div>
+                <div className='w-full md:w-1/4 flex items-center justify-center md:justify-end'>
+                  <button
+                    onClick={() => handleShowAnswer(item.id)}
+                    className="w-12 h-12 md:w-20 md:h-20 bg-custom-primary text-white rounded-full flex items-center justify-center"
+                  >
+                    <span className="text-3xl md:text-4xl">{showAnswer === item.id ? '-' : '+'}</span>
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
+
+.
+      {/* Not Okay */}
+      <section className='relative z-40 flex flex-col max-h-screen w-full mt-36'>
+        <div className='w-full mb-28 px-6 md:px-20'>
+          <img src={BottomBanner} alt="Bottom Banner" className="w-full" />
+          <div className='absolute top-0 p-6 md:p-20 text-start'>
+            <h1 className='text-3xl md:text-5xl text-white font-bold'>
+              Book an Appointment With <br />
+              Your Doctor NOW!
+            </h1>
+            <p className='mt-5 text-lg md:text-xl font-semibold text-gray-200'>
+              Conveniently pay for your dental treatments with your insurance. <br />
+              We accept major insurance providers.
+            </p>
+            <button className='mt-5 px-5 text-lg md:text-xl py-2 rounded-md bg-black text-white'>
+              BOOK NOW
+            </button>
+          </div>
+          <div className='absolute top-[-90px] right-0 md:top-[-90px]'>
+            <img src={BottomBannerGirl} alt="Bottom Banner Girl" className='h-[320px] md:h-[520px]' />
+          </div>
+        </div>
+      </section>
+
 
 
     </>

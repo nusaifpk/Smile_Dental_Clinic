@@ -10,14 +10,12 @@ const Header = () => {
   };
 
   return (
-    <header className="px-5 py-8 bg-white shadow-md">
+    <header className="px-5 py-8 bg-white shadow-md top-0 sticky z-50">
       <nav className="flex justify-between items-center">
-        {/* Logo */}
         <Link to="/">
           <img src={Logo} alt="logo" className="h-10" />
         </Link>
 
-        {/* Hamburger Icon for Mobile */}
         <div className="lg:hidden" onClick={toggleMenu}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +33,7 @@ const Header = () => {
           </svg>
         </div>
 
-        {/* Desktop Menu */}
+        {/* Dekstop  */}
         <div className="hidden lg:flex items-center gap-5 text-black font-semibold">
           <ul className="flex gap-5">
             <li className="hover:text-custom-primary cursor-pointer hover:shadow-sm">Home</li>
@@ -50,7 +48,7 @@ const Header = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+       {/* Mobile */}
       <div
         className={`lg:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-white p-5 shadow-md`}
       >

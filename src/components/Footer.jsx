@@ -7,7 +7,6 @@ const Footer = () => {
     <footer className="py-10 bg-custom-footer-black text-white px-10">
       <div className="container mx-auto space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-start">
-          {/* Contact Information Section */}
           <div className="space-y-6">
             <img src={FooterLogo} alt="logo" className="h-14 mx-auto md:mx-0" />
             <p className="text-3xl font-semibold mt-10">Get In Touch</p>
@@ -29,7 +28,6 @@ const Footer = () => {
             </span>
           </div>
 
-          {/* Address and Location Map Section */}
           <div className="space-y-6">
             <p className="text-3xl font-semibold">Our Address</p>
             <ul>
@@ -49,7 +47,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Quick Links Section */}
           <div className="space-y-6">
             <p className="text-3xl font-semibold">Quick Links</p>
             <ul>
@@ -62,7 +59,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services and Hours Section */}
           <div className="space-y-6">
             <p className="text-3xl font-semibold">Services</p>
             <ul>
@@ -77,10 +73,8 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Footer Divider */}
         <hr className="w-full border-gray-600" />
 
-        {/* Footer Bottom */}
         <div className="text-center pt-6">
           <p className="text-gray-600">© All rights reserved by Smile Essentials - Powered by Hoztox Technologies</p>
         </div>
