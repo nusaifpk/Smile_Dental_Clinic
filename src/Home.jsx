@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
 
+//Carousel
+import Carousel from 'react-multi-carousel'
+import "react-multi-carousel/lib/styles.css";
+
 //Assets
 import HomeImg from './assets/HomeImg.png'
 import ExpDoc1 from './assets/ExpDocs/Mask group.png'
@@ -23,11 +27,8 @@ import { faqs } from './datas/Faqs'
 import { highlights } from './datas/Highlights'
 import { Call, WhatsApp } from '@mui/icons-material'
 
-const carouselImages = [
-  HomeImg, // Your image paths
-  HomeImg,
-  HomeImg
-];
+
+
 
 const Home = () => {
 
@@ -250,30 +251,91 @@ const Home = () => {
       <section className="relative z-40 flex flex-col min-h-screen bg-custom-primary w-full">
         <div className="flex flex-col lg:flex-row w-full py-24 px-6 md:px-20">
           <div className="w-full lg:w-1/3 mb-12 lg:mb-0 lg:ml-20">
-            <img src={ReviewBanner} alt="Review Banner" className="w-full h-[400px] rounded-xl object-cover" />
+            <img
+              src={ReviewBanner}
+              alt="Review Banner"
+              className="w-full h-[400px] rounded-xl object-cover"
+            />
           </div>
+
           <div className="w-full lg:w-2/3 mt-12 lg:mt-0 lg:ml-28">
             <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight">
               500+ Happy clients said <br /> to us they are satisfied
             </h1>
-            <div className="flex flex-col lg:flex-row gap-10 mt-16">
-              {reviews.map((user) => (
-                <div key={user.id} className="p-6 w-full lg:w-96 bg-gray-100 rounded-2xl shadow-xl flex flex-col text-start">
-                  <p className="pb-6 text-gray-700">{user.comment}</p>
-                  <hr className="w-full border-gray-300" />
-                  <div className="flex mt-4 items-center gap-4">
-                    <img src={user.photo} alt={user.name} className="h-12 w-12 rounded-full" />
-                    <div className="flex flex-col">
-                      <h1 className="font-semibold">{user.name}</h1>
-                      <p className="text-sm text-gray-400">{user.country}</p>
+
+            <div className="mt-16">
+              <Carousel
+                additionalTransfrom={0}
+                arrows
+                autoPlay
+                autoPlaySpeed={3000}
+                centerMode={false}
+                className=""
+                containerClass="container"
+                dotListClass=""
+                draggable
+                focusOnSelect={false}
+                infinite
+                itemClass="p-4"
+                keyBoardControl
+                minimumTouchDrag={80}
+                renderButtonGroupOutside={false}
+                renderDotsOutside={false}
+                responsive={{
+                  desktop: {
+                    breakpoint: { max: 3000, min: 1024 },
+                    items: 2, 
+                    slidesToSlide: 2, 
+                  },
+                  tablet: {
+                    breakpoint: { max: 1024, min: 464 },
+                    items: 1,
+                    slidesToSlide: 1,
+                  },
+                  mobile: {
+                    breakpoint: { max: 464, min: 0 },
+                    items: 1,
+                    slidesToSlide: 1,
+                  },
+                }}
+                showDots={false}
+                sliderClass=""
+                swipeable
+              >
+                {reviews.map((user) => (
+                  <div
+                    key={user.id}
+                    className="p-6 bg-gray-100 rounded-2xl shadow-lg flex flex-col text-start"
+                  >
+                    <p className="pb-6 text-gray-700">{user.comment}</p>
+                    <hr className="w-full border-gray-300" />
+                    <div className="flex mt-4 items-center gap-4">
+                      <img
+                        src={user.photo}
+                        alt={user.name}
+                        className="h-12 w-12 rounded-full"
+                      />
+                      <div className="flex flex-col">
+                        <h1 className="font-semibold">{user.name}</h1>
+                        <p className="text-sm text-gray-400">{user.country}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </Carousel>
             </div>
           </div>
         </div>
       </section>
+
+
+
+
+
+
+
+
+
 
 
 
