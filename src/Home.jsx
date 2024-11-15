@@ -5,16 +5,18 @@ import Carousel from 'react-multi-carousel'
 import "react-multi-carousel/lib/styles.css";
 
 //Assets
-import HomeImg from './assets/HomeImg.png'
-import ExpDoc1 from './assets/ExpDocs/Mask group.png'
-import ExpDoc2 from './assets/ExpDocs/Mask group (1).png'
-import ExpDoc3 from './assets/ExpDocs/Mask group (2).png'
-import GLogo from './assets/Google__G__Logo 1.png'
-import GRating from './assets/Frame 5.png'
+import HomeImg from './assets/file.png';
+import ExpDoc1 from './assets/ExpDocs/Mask group.png';
+import ExpDoc2 from './assets/ExpDocs/Mask group (1).png';
+import ExpDoc3 from './assets/ExpDocs/Mask group (2).png';
+import GLogo from './assets/Google__G__Logo 1.png';
+import GRating from './assets/Frame 5.png';
 import star from './assets/Star 5.png'
 import BottomBannerGirl from './assets/young-man-using-phone-while-standing-against-white-background-removebg-preview 1.png'
 import ReviewBanner from './assets/ReviewBanner.png'
 import BottomBanner from './assets/Frame 1321315051.png'
+import CallOutlined from './assets/Icons/CallOutlined.png'
+import WhatsApp from './assets/Icons/WhatsApp.png'
 
 //Datas
 import { services } from './datas/Servieces'
@@ -25,7 +27,6 @@ import { insurances } from './datas/Insurance'
 import { blogs } from './datas/Blogs'
 import { faqs } from './datas/Faqs'
 import { highlights } from './datas/Highlights'
-import { Call, WhatsApp } from '@mui/icons-material'
 
 
 
@@ -41,92 +42,82 @@ const Home = () => {
   return (
     <>
       {/* good */}
-      <section className="relative flex flex-col lg:flex-row h-screen w-full">
-        <div className="absolute inset-x-0 top-20 flex items-start justify-between px-6 sm:px-10 z-10 flex-col lg:flex-row lg:px-10">
-          <div className="text-start pl-10 mb-10 lg:mb-0">
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl text-black font-bold leading-tight">
-              Have a shining <br className="hidden sm:block" /> smile with our
-            </h1>
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl text-custom-primary font-bold leading-tight">
-              modern methods!
-            </h1>
-
-            <div className="mt-16 flex items-center p-2 border-t-4 border-custom-green shadow-xl max-w-56 rounded-md sticky top-0">
-              <img src={GLogo} alt="Google logo" className="h-10" />
-              <span className="flex flex-col ml-2">
-                <h1 className="font-semibold text-gray-600">Google Rating</h1>
-                <span className="flex items-center gap-2">
-                  <h1 className="text-custom-primary font-bold text-xl">4.8</h1>
-                  <img src={GRating} alt="Rating icon" className="h-4" />
-                </span>
-                <p className="text-xs text-gray-400 cursor-pointer">See all our reviews</p>
-              </span>
+      <section className="flex flex-col items-center px-4 lg:px-10 bg-gradient-to-r from-white via-gray-200 to-gray-300 min-h-screen">
+      <div className="flex flex-col lg:flex-row items-center w-full lg:justify-between py-10 gap-8">
+        <div className="flex flex-col items-start gap-8 w-full lg:w-1/2 text-start font-custom-atyp">
+          <h1 className="text-4xl lg:text-6xl font-semibold leading-tight text-gray-800">
+            Have a shining <br /> smile with our <br />
+            <span className="text-orange-500">modern methods! yy</span>
+          </h1>
+          <div className="flex items-center p-4  border-custom-green rounded-lg shadow-lg gap-4 bg-white border-t-4">
+            <img src={GLogo} alt="Google logo" className="h-10" />
+            <div>
+              <h2 className="text-gray-600 font-medium">Google Rating</h2>
+              <div className="flex items-center gap-2">
+                <span className="text-xl font-bold text-orange-500">4.8</span>
+                <img src={GRating} alt="Rating stars" className="h-4" />
+              </div>
+              <p className="text-xs text-gray-500 cursor-pointer">See all our reviews</p>
             </div>
           </div>
+        </div>
 
-          <div className="flex flex-col gap-2 bg-gray-200 p-5 rounded-md max-w-56 border-gray-50 border-2">
-            <h1 className="text-custom-primary text-2xl font-bold">
-              15+ <span className="text-sm">Expert Doctors</span>
-            </h1>
-            <span className="flex gap-2">
-              <img src={ExpDoc1} alt="Expert Doctor 1" className="h-12" />
-              <img src={ExpDoc2} alt="Expert Doctor 2" className="h-12" />
-              <img src={ExpDoc3} alt="Expert Doctor 3" className="h-12" />
-            </span>
-            <p className="text-sm">
-              We take meticulous care of your dental needs to ensure a healthy, lasting smile.
-            </p>
+
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+          <img src={HomeImg} alt="Smiling woman" className="w-full lg:min-h-[590px]" />
+        </div>
+
+   
+        <div className="flex flex-col items-start text-start p-5 bg-gray-200 shadow-lg rounded-lg mt-8 lg:mt-0 border-2 border-gray-100 w-full lg:max-w-60">
+          <h2 className="text-2xl font-semibold text-orange-500">15+ <span className="text-lg">Expert Doctors</span></h2>
+          <div className="flex gap-2 mt-4">
+            <img src={ExpDoc1} alt="Expert Doctor 1" className="h-14 w-14 rounded-full" />
+            <img src={ExpDoc2} alt="Expert Doctor 2" className="h-14 w-14 rounded-full" />
+            <img src={ExpDoc3} alt="Expert Doctor 3" className="h-14 w-14 rounded-full" />
           </div>
+          <p className="font-custom-kido text-sm text-custom-atyp mt-4">
+            We take meticulous care of <br />your dental needs to ensure a healthy, lasting smile.
+          </p>
         </div>
-
-        <div className="w-full lg:w-1/4 bg-white flex items-center justify-start p-6 lg:p-10"></div>
-
-        <div className="w-full lg:w-3/4 relative">
-          <img src={HomeImg} alt="Dental care promotion" className="object-cover w-full h-full" />
-        </div>
-        <a
+      </div>
+      <a
           href="#"
           target="_blank"
           className="fixed bottom-20 right-5 lg:bottom-24 lg:right-10 border-2 border-custom-green bg-custom-floral-white p-3 rounded-full shadow-lg z-50"
           aria-label="Call"
         >
-          <Call />
+          <img src={CallOutlined} alt="call-icon" className='h-6' />
         </a>
         <a
           href="#"
           target="_blank"
-          className="fixed bottom-5 right-5 lg:bottom-10 lg:right-10 bg-green-500 p-3 rounded-full shadow-lg z-50"
+          className="fixed bottom-5 right-5 lg:bottom-10 lg:right-10 border-2 border-custom-green bg-custom-floral-white p-3 rounded-full shadow-lg z-50"
           aria-label="WhatsApp"
         >
-          <WhatsApp />
+          <img src={WhatsApp} alt="whatsapp-icon" className='h-6' />
         </a>
-      </section>
-
-
-
-      {/* Not Okay */}
-      <section className="relative flex items-center justify-center z-30 w-full">
-        <div className="w-full h-[25vh] sm:h-[30vh] bg-black flex items-center justify-center relative">
-          <div className="flex xl:mt-[-200px] flex-col md:flex-row justify-between items-center w-full max-w-screen-xl bg-white p-6 sm:p-8 md:p-12 border-2 border-gray-300 text-black text-center rounded-lg shadow-lg gap-6 sm:gap-8 md:gap-10 lg:gap-12">
-            {highlights.map((list) => (
-              <div
-                key={list.id}
-                className="flex flex-col items-center md:flex-row gap-4 sm:gap-6 md:gap-8 w-full md:w-auto"
-              >
-                <img src={list.photo} alt="icon" className="h-10 sm:h-12 md:h-14 lg:h-16" />
-                <span className="flex flex-col items-center md:items-start">
-                  <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-custom-primary leading-tight">
-                    {list.count}
-                  </h1>
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 font-light mt-2">
-                    {list.title}
-                  </p>
-                </span>
+    </section>
+      <div className='lg:absolute flex items-center justify-center w-full '>
+        <div className="grid grid-cols-2 lg:px-0 px-5 mt-5  lg:grid-cols-4 lg:mt-[-60px] w-full max-w-7xl border-b border-r  ">
+          {highlights.map((highlight) => (
+              <div key={highlight.id} className="flex justify-center items-center text-start gap-5 bg-white p-6 shadow-lg ">
+                  <img src={highlight.photo} alt="highlite-icon" className='lg:h-14 h-8' />
+                  <span>
+                      <span className="text-orange-500 lg:text-4xl font-custom-atyp">{highlight.count}</span>
+                      <p className="text-gray-600 font-thin">{highlight.title}</p>
+                  </span>
               </div>
-            ))}
-          </div>
+          ))}
         </div>
-      </section>
+      </div>
+
+
+        <section className=''>
+          <div className='flex w-screen lg:min-h-[25vh] bg-black'>
+
+          </div>
+        </section>
+      
 
 
 
@@ -134,12 +125,12 @@ const Home = () => {
 
       {/* Services */}
       <section className="relative flex min-h-screen w-full">
-        <div className="w-full py-10 sm:py-20 mt-[200px] sm:mt-0">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold px-4 sm:px-10 lg:px-20 text-start">
+        <div className="w-full py-10 sm:py-20 sm:mt-0">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-custom-atyp font-semibold px-4 sm:px-10 lg:px-20 text-start">
             Transform your smile with <br />
             veneers, whitening, and implants.
           </h1>
-          <p className="my-6 sm:my-10 text-lg sm:text-xl md:text-2xl font-semibold text-gray-500 px-4 sm:px-10 lg:px-20 text-start">
+          <p className="my-6 sm:my-10 text-lg sm:text-xl md:text-lg font-poppins text-gray-500 px-4 sm:px-10 lg:px-20 text-start">
             Lorem Ipsum available, but the majority have suffered alteration in some form, <br />
             by injected humour, or randomised words which don't look even.
           </p>
@@ -150,7 +141,7 @@ const Home = () => {
                 className="flex flex-col items-center gap-2 sm:gap-3 py-6 sm:py-8 p-3 sm:p-4 bg-custom-floral-white rounded-lg"
               >
                 <img src={item.icon} alt="icons" className="h-12 sm:h-16 lg:h-20 mb-2" />
-                <h1 className="text-xs sm:text-sm md:text-lg font-bold">{item.title}</h1>
+                <h1 className="text-xs sm:text-sm md:text-lg font-custom-atyp font-semibold">{item.title}</h1>
               </div>
             ))}
           </div>
@@ -159,8 +150,8 @@ const Home = () => {
 
       {/* Team */}
       <div className="w-full lg:py-10 sm:h-[60vh] flex flex-col gap-5 items-center bg-black">
-        <h1 className="text-white text-2xl sm:text-3xl md:text-5xl font-bold mt-10">Meet Our Team</h1>
-        <p className="mb-10 text-gray-400 text-sm sm:text-base md:text-lg text-center px-4 sm:px-10 lg:px-20">
+        <h1 className="text-white text-2xl sm:text-3xl md:text-5xl font-custom-atyp mt-10">Meet Our Team</h1>
+        <p className="mb-10 text-gray-400 text-sm sm:text-base font-poppins font-light md:text-lg text-center px-4 sm:px-10 lg:px-20">
           Lorem Ipsum available, but the majority have suffered alteration in some form, <br />
           by injected humour, or randomised words which don't look even.
         </p>
@@ -172,14 +163,14 @@ const Home = () => {
         <div className="w-full py-10 sm:py-20">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full px-4 sm:px-10 lg:px-20">
             {doctors.map((doc) => (
-              <div key={doc.id} className="flex flex-col items-center gap-4 p-4 rounded-lg">
+              <div key={doc.id} className="flex flex-col items-center lg:items-start gap-4 p-4 rounded-lg">
                 <div
                   className="w-[200px] sm:w-[250px] md:w-[280px] lg:w-[300px] h-[300px] sm:h-[350px] md:h-[380px] lg:h-[400px] bg-cover bg-center rounded-lg"
                   style={{ backgroundImage: `url(${doc.photo})` }}
                 ></div>
-                <div className="mt-4 text-center">
-                  <h1 className="text-lg sm:text-xl md:text-2xl font-bold">{doc.name}</h1>
-                  <p className="text-sm sm:text-md md:text-lg text-gray-500">{doc.speciality}</p>
+                <div className="mt-4 text-start">
+                  <h1 className="text-lg sm:text-xl md:text-2xl font-custom-atyp font-semibold">{doc.name}</h1>
+                  <p className="text-sm sm:text-md md:text-lg font-poppins text-gray-500">{doc.speciality}</p>
                 </div>
               </div>
             ))}
@@ -196,13 +187,13 @@ const Home = () => {
       {/* Offers */}
       <section className="relative flex flex-col min-h-screen w-full">
         <div className="flex flex-col md:flex-row w-full py-20 px-6 md:px-20">
-          <div className="flex w-full md:w-1/2 mb-6 md:mb-0">
-            <h1 className="text-4xl md:text-5xl font-bold text-black leading-tight">
+          <div className="flex w-full md:w-1/2 mb-6 md:mb-0 text-start">
+            <h1 className="text-4xl md:text-5xl font-custom-atyp text-black leading-tight">
               Exclusive <br />Monthly Dental Offers
             </h1>
           </div>
           <div className="flex w-full md:w-1/2">
-            <p className="my-10 font-sans text-lg font-semibold text-gray-400">
+            <p className="my-10  text-lg font-poppins font-regular text-gray-400">
               Unlock your smile’s potential with our exclusive <br />
               dental offers for this month
             </p>
@@ -216,15 +207,15 @@ const Home = () => {
               className="flex flex-col items-center gap-4 py-10 p-4 bg-custom-floral-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               <img src={offer.photo} alt="icons" className="h-56 mb-4 object-cover" />
-              <h1 className="text-lg font-bold">{offer.title}</h1>
-              <h1 className="text-3xl font-bold text-custom-primary">{offer.price} AED</h1>
+              <h1 className="text-lg font-custom-atyp font-normal">{offer.title}</h1>
+              <h1 className="text-3xl font-custom-atyp text-custom-primary">{offer.price} AED</h1>
               <hr className="w-full my-2" />
-              <h1 className="font-semibold text-gray-600">{offer.Decription1}</h1>
+              <h1 className="font-poppins text-gray-500">{offer.Decription1}</h1>
               <hr className="w-full my-2" />
-              <h1 className="font-semibold text-gray-600">{offer.Decription2}</h1>
+              <h1 className="font-poppins text-gray-500">{offer.Decription2}</h1>
               <hr className="w-full my-2" />
-              <h1 className="font-semibold text-gray-600">{offer.Decription3}</h1>
-              <button className="mt-4 px-6 py-3 rounded-md bg-black text-white hover:bg-gray-800 transition-colors duration-300">
+              <h1 className="font-poppins text-gray-500">{offer.Decription3}</h1>
+              <button className="mt-4 px-6 py-3 rounded-md font-custom-atyp font-light bg-black text-white hover:bg-gray-800 transition-colors duration-300">
                 MAKE AN APPOINTMENT
               </button>
             </div>
@@ -232,15 +223,15 @@ const Home = () => {
         </div>
         <div className="overflow-hidden py-10">
           <span className="flex flex-row justify-start items-center gap-8 animate-marquee">
-            <h1 className="text-2xl font-semibold">General Dentistry</h1>
+            <h1 className="text-2xl font-kumbh">General Dentistry</h1>
             <img src={star} alt="star" className="h-5" />
-            <h1 className="text-2xl font-semibold">Cosmetic Dentistry</h1>
+            <h1 className="text-2xl font-kumbh">Cosmetic Dentistry</h1>
             <img src={star} alt="star" className="h-5" />
-            <h1 className="text-2xl font-semibold">Teeth Whitening</h1>
+            <h1 className="text-2xl font-kumbh">Teeth Whitening</h1>
             <img src={star} alt="star" className="h-5" />
-            <h1 className="text-2xl font-semibold">Gum Treatment</h1>
+            <h1 className="text-2xl font-kumbh">Gum Treatment</h1>
             <img src={star} alt="star" className="h-5" />
-            <h1 className="text-2xl font-semibold">Root Canal Treatment</h1>
+            <h1 className="text-2xl font-kumbh">Root Canal Treatment</h1>
             <img src={star} alt="star" className="h-5" />
           </span>
         </div>
@@ -259,7 +250,7 @@ const Home = () => {
           </div>
 
           <div className="w-full lg:w-2/3 mt-12 lg:mt-0 lg:ml-28">
-            <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight">
+            <h1 className="text-white text-4xl md:text-6xl font-custom-atyp font-semibold leading-tight">
               500+ Happy clients said <br /> to us they are satisfied
             </h1>
 
@@ -459,3 +450,4 @@ const Home = () => {
 }
 
 export default Home
+

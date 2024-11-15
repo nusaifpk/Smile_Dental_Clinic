@@ -40,7 +40,8 @@ const Footer = () => {
             <p className="text-3xl font-semibold">Location Map</p>
             <ul>
               <li>
-                <iframe 
+                <iframe
+                  title='View location' 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.188524152707!2d55.29985287516523!3d25.245469177679915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43278d22325f%3A0x8ac8539640a83c8e!2sSmile%20Essentials%20Dental%20Clinic%20L.L.C%2C%20Best%20in%20Karama%20Dubai!5e1!3m2!1sen!2sin!4v1731661165552!5m2!1sen!2sin" 
                   width="300" 
                   height="140" 

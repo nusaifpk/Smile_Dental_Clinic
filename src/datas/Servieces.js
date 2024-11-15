@@ -37,7 +37,7 @@ export const services = [
     {
         id:6,
         icon: icon6,
-        title: 'Root CanalTreatment'
+        title: 'Root Canal Treatment'
     },
     {
         id:7,
