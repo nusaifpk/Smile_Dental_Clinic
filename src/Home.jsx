@@ -23,7 +23,11 @@ import { faqs } from './datas/Faqs'
 import { highlights } from './datas/Highlights'
 import { Call, WhatsApp } from '@mui/icons-material'
 
-
+const carouselImages = [
+  HomeImg, // Your image paths
+  HomeImg,
+  HomeImg
+];
 
 const Home = () => {
 
@@ -37,89 +41,91 @@ const Home = () => {
     <>
       {/* good */}
       <section className="relative flex flex-col lg:flex-row h-screen w-full">
-  <div className="absolute inset-x-0 top-20 flex items-start justify-between px-6 sm:px-10 z-10 flex-col lg:flex-row lg:px-10">
-    <div className="text-start pl-10 mb-10 lg:mb-0">
-      <h1 className="text-4xl sm:text-5xl lg:text-7xl text-black font-bold leading-tight">
-        Have a shining <br className="hidden sm:block" /> smile with our
-      </h1>
-      <h1 className="text-4xl sm:text-5xl lg:text-7xl text-custom-primary font-bold leading-tight">
-        modern methods!
-      </h1>
-
-      <div className="mt-16 flex items-center p-2 border-t-4 border-custom-green shadow-xl max-w-56 rounded-md sticky top-0">
-        <img src={GLogo} alt="Google logo" className="h-10" />
-        <span className="flex flex-col ml-2">
-          <h1 className="font-semibold text-gray-600">Google Rating</h1>
-          <span className="flex items-center gap-2">
-            <h1 className="text-custom-primary font-bold text-xl">4.8</h1>
-            <img src={GRating} alt="Rating icon" className="h-4" />
-          </span>
-          <p className="text-xs text-gray-400 cursor-pointer">See all our reviews</p>
-        </span>
-      </div>
-    </div>
-
-    <div className="flex flex-col gap-2 bg-gray-200 p-5 rounded-md max-w-56 border-gray-50 border-2">
-      <h1 className="text-custom-primary text-2xl font-bold">
-        15+ <span className="text-sm">Expert Doctors</span>
-      </h1>
-      <span className="flex gap-2">
-        <img src={ExpDoc1} alt="Expert Doctor 1" className="h-12" />
-        <img src={ExpDoc2} alt="Expert Doctor 2" className="h-12" />
-        <img src={ExpDoc3} alt="Expert Doctor 3" className="h-12" />
-      </span>
-      <p className="text-sm">
-        We take meticulous care of your dental needs to ensure a healthy, lasting smile.
-      </p>
-    </div>
-  </div>
-
-  <div className="w-full lg:w-1/4 bg-white flex items-center justify-start p-6 lg:p-10"></div>
-
-  <div className="w-full lg:w-3/4 relative">
-    <img src={HomeImg} alt="Dental care promotion" className="object-cover w-full h-full" />
-  </div>
-  <a
-    href="#"
-    target="_blank"
-    className="fixed bottom-20 right-5 lg:bottom-24 lg:right-10 border-2 border-custom-green bg-custom-floral-white p-3 rounded-full shadow-lg z-50"
-    aria-label="Call"
-  >
-    <Call />
-  </a>
-  <a
-    href="#"
-    target="_blank"
-    className="fixed bottom-5 right-5 lg:bottom-10 lg:right-10 bg-green-500 p-3 rounded-full shadow-lg z-50"
-    aria-label="WhatsApp"
-  >
-    <WhatsApp />
-  </a>
-</section>
-
-{/* Not Okay */}
-<section className="relative flex items-center justify-center z-30 w-full">
-  <div className="w-full h-[25vh] sm:h-[30vh] bg-black flex items-center justify-center relative">
-    <div className="flex xl:mt-[-200px] flex-col md:flex-row justify-between items-center w-full max-w-screen-xl bg-white p-6 sm:p-8 md:p-12 border-2 border-gray-300 text-black text-center rounded-lg shadow-lg gap-6 sm:gap-8 md:gap-10 lg:gap-12">
-      {highlights.map((list) => (
-        <div
-          key={list.id}
-          className="flex flex-col items-center md:flex-row gap-4 sm:gap-6 md:gap-8 w-full md:w-auto"
-        >
-          <img src={list.photo} alt="icon" className="h-10 sm:h-12 md:h-14 lg:h-16" />
-          <span className="flex flex-col items-center md:items-start">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-custom-primary leading-tight">
-              {list.count}
+        <div className="absolute inset-x-0 top-20 flex items-start justify-between px-6 sm:px-10 z-10 flex-col lg:flex-row lg:px-10">
+          <div className="text-start pl-10 mb-10 lg:mb-0">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl text-black font-bold leading-tight">
+              Have a shining <br className="hidden sm:block" /> smile with our
             </h1>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 font-light mt-2">
-              {list.title}
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl text-custom-primary font-bold leading-tight">
+              modern methods!
+            </h1>
+
+            <div className="mt-16 flex items-center p-2 border-t-4 border-custom-green shadow-xl max-w-56 rounded-md sticky top-0">
+              <img src={GLogo} alt="Google logo" className="h-10" />
+              <span className="flex flex-col ml-2">
+                <h1 className="font-semibold text-gray-600">Google Rating</h1>
+                <span className="flex items-center gap-2">
+                  <h1 className="text-custom-primary font-bold text-xl">4.8</h1>
+                  <img src={GRating} alt="Rating icon" className="h-4" />
+                </span>
+                <p className="text-xs text-gray-400 cursor-pointer">See all our reviews</p>
+              </span>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-2 bg-gray-200 p-5 rounded-md max-w-56 border-gray-50 border-2">
+            <h1 className="text-custom-primary text-2xl font-bold">
+              15+ <span className="text-sm">Expert Doctors</span>
+            </h1>
+            <span className="flex gap-2">
+              <img src={ExpDoc1} alt="Expert Doctor 1" className="h-12" />
+              <img src={ExpDoc2} alt="Expert Doctor 2" className="h-12" />
+              <img src={ExpDoc3} alt="Expert Doctor 3" className="h-12" />
+            </span>
+            <p className="text-sm">
+              We take meticulous care of your dental needs to ensure a healthy, lasting smile.
             </p>
-          </span>
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+
+        <div className="w-full lg:w-1/4 bg-white flex items-center justify-start p-6 lg:p-10"></div>
+
+        <div className="w-full lg:w-3/4 relative">
+          <img src={HomeImg} alt="Dental care promotion" className="object-cover w-full h-full" />
+        </div>
+        <a
+          href="#"
+          target="_blank"
+          className="fixed bottom-20 right-5 lg:bottom-24 lg:right-10 border-2 border-custom-green bg-custom-floral-white p-3 rounded-full shadow-lg z-50"
+          aria-label="Call"
+        >
+          <Call />
+        </a>
+        <a
+          href="#"
+          target="_blank"
+          className="fixed bottom-5 right-5 lg:bottom-10 lg:right-10 bg-green-500 p-3 rounded-full shadow-lg z-50"
+          aria-label="WhatsApp"
+        >
+          <WhatsApp />
+        </a>
+      </section>
+
+
+
+      {/* Not Okay */}
+      <section className="relative flex items-center justify-center z-30 w-full">
+        <div className="w-full h-[25vh] sm:h-[30vh] bg-black flex items-center justify-center relative">
+          <div className="flex xl:mt-[-200px] flex-col md:flex-row justify-between items-center w-full max-w-screen-xl bg-white p-6 sm:p-8 md:p-12 border-2 border-gray-300 text-black text-center rounded-lg shadow-lg gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+            {highlights.map((list) => (
+              <div
+                key={list.id}
+                className="flex flex-col items-center md:flex-row gap-4 sm:gap-6 md:gap-8 w-full md:w-auto"
+              >
+                <img src={list.photo} alt="icon" className="h-10 sm:h-12 md:h-14 lg:h-16" />
+                <span className="flex flex-col items-center md:items-start">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-custom-primary leading-tight">
+                    {list.count}
+                  </h1>
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 font-light mt-2">
+                    {list.title}
+                  </p>
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
 
 
@@ -238,6 +244,9 @@ const Home = () => {
           </span>
         </div>
       </section>
+
+
+      {/* Reviews */}
       <section className="relative z-40 flex flex-col min-h-screen bg-custom-primary w-full">
         <div className="flex flex-col lg:flex-row w-full py-24 px-6 md:px-20">
           <div className="w-full lg:w-1/3 mb-12 lg:mb-0 lg:ml-20">
@@ -249,7 +258,7 @@ const Home = () => {
             </h1>
             <div className="flex flex-col lg:flex-row gap-10 mt-16">
               {reviews.map((user) => (
-                <div key={user.id} className="p-6 w-full lg:w-96 bg-gray-100 rounded-2xl shadow-xl flex flex-col">
+                <div key={user.id} className="p-6 w-full lg:w-96 bg-gray-100 rounded-2xl shadow-xl flex flex-col text-start">
                   <p className="pb-6 text-gray-700">{user.comment}</p>
                   <hr className="w-full border-gray-300" />
                   <div className="flex mt-4 items-center gap-4">
