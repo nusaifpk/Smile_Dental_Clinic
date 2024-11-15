@@ -80,10 +80,10 @@ const Home = () => {
           <img src={HomeImg} alt="Dental care promotion" className="object-cover w-full h-full" />
         </div>
         <a
-            href="mailto:info@smiledentaldubai.com"
+            href="#"
             target="_blank"
             className="fixed bottom-20 right-5 lg:bottom-24 lg:right-10 border-2 border-custom-green bg-custom-floral-white p-3 rounded-full shadow-lg z-50"
-            aria-label="WhatsApp"
+            aria-label="Call"
         >
           <Call/>
         </a>
@@ -360,30 +360,38 @@ const Home = () => {
 
 .
       {/* Not Okay */}
-      <section className='relative z-40 flex flex-col max-h-screen w-full mt-36'>
-        <div className='w-full mb-28 px-6 md:px-20'>
-          <img src={BottomBanner} alt="Bottom Banner" className="w-full" />
-          <div className='absolute top-0 p-6 md:p-20 text-start'>
-            <h1 className='text-3xl md:text-5xl text-white font-bold'>
-              Book an Appointment With <br />
-              Your Doctor NOW!
-            </h1>
-            <p className='mt-5 text-lg md:text-xl font-semibold text-gray-200'>
-              Conveniently pay for your dental treatments with your insurance. <br />
-              We accept major insurance providers.
-            </p>
-            <button className='mt-5 px-5 text-lg md:text-xl py-2 rounded-md bg-black text-white'>
-              BOOK NOW
-            </button>
-          </div>
-          <div className='absolute top-[-90px] right-0 md:top-[-132px]'>
-            <img src={BottomBannerGirl} alt="Bottom Banner Girl" className='h-[320px] md:h-[520px]' />
-          </div>
-        </div>
-      </section>
       
 
+<section className="relative">
+  <div className="relative">
+    <div className="px-6 md:px-20 py-20">
+      <img src={BottomBanner} alt="Bottom Banner" className="w-full" />
+    </div>
 
+    <div className="absolute m-10 xl:m-36 top-0 mb-6 mr-6 text-start pr-">
+      <h1 className="text-md mt-12 sm:text-4xl md:text-5xl lg:text-6xl xl:text-5xl text-white font-bold">
+        Book an Appointment With <br />
+        Your Doctor NOW!
+      </h1>
+      
+      <p className="mt-5 text-[8px] sm:text-xl md:text-2xl lg:text-xl font-semibold text-gray-200">
+        Conveniently pay for your dental treatments with your insurance. <br />
+        We accept major insurance providers.
+      </p>
+      <button class="mt-5 px-6 py-2 rounded-md bg-black text-white text-lg sm:text-xl md:text-2xl">
+        BOOK NOW
+      </button>
+    </div>
+
+    <div className="absolute bottom-[56px] right-10 mb-6 md:mr-6 mr-[-30px] ">
+      <img src={BottomBannerGirl} alt="Bottom Banner Girl" className="h-36 md:h-[450px] object-cover" />
+    </div>
+  </div>
+</section>
+
+
+
+      
 
     </>
   )
