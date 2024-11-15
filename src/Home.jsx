@@ -87,10 +87,10 @@ const Home = () => {
       <section className="absolute inset-x-0 top-[115vh] -translate-y-1/2 flex items-center justify-center z-30 px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-center px-6 md:px-10 w-full max-w-screen-xl bg-white p-8 md:p-12 border-2 text-black text-center h-auto rounded-lg shadow-lg">
           {highlights.map((list) => (
-            <div key={list.id} className="flex flex-col md:flex-row justify-center md:justify-start gap-6 md:gap-12 items-center md:items-start w-full">
-              <img src={list.photo} alt="icons" className="h-16 md:h-20" />
+            <div key={list.id} className="flex flex-col md:flex-row md:items-center md:justify-center gap-10 md:gap-8 items-center w-full">
+              <img src={list.photo} alt="icons" className="h-12 md:h-12" />
               <span className="flex flex-col items-center md:items-start">
-                <h1 className="text-3xl md:text-5xl font-extrabold text-custom-primary leading-tight">{list.count}</h1>
+                <h1 className="text-3xl md:text-4xl font-extrabold text-custom-primary leading-tight">{list.count}</h1>
                 <p className="text-lg md:text-xl text-gray-700 font-light mt-2">{list.title}</p>
               </span>
             </div>
@@ -104,70 +104,67 @@ const Home = () => {
 
       {/* Okay */}
       <section className="relative flex min-h-screen w-full">
-        <div className="text-start w-full py-20">
-          <h1 className="text-3xl sm:text-5xl font-bold px-6 sm:px-20">
+        <div className="w-full py-10 sm:py-20">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold px-4 sm:px-10 lg:px-20 text-start">
             Transform your smile with <br />
             veneers, whitening, and implants.
           </h1>
-          <p className="my-10 font-sans text-xl sm:text-2xl font-semibold text-gray-500 px-6 sm:px-20">
-            Lorem Ipsum available, but the majority have suffered alteration in some form,<br />
-            by injected humour, or randomised words which don't look even
+          <p className="my-6 sm:my-10 text-lg sm:text-xl md:text-2xl font-semibold text-gray-500 px-4 sm:px-10 lg:px-20 text-start">
+            Lorem Ipsum available, but the majority have suffered alteration in some form, <br />
+            by injected humour, or randomised words which don't look even.
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 w-full px-6 sm:px-20">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 w-full px-4 sm:px-10 lg:px-20">
             {services.map((item) => (
               <div
                 key={item.id}
-                className="flex flex-col items-center gap-3 py-10 p-4 bg-custom-floral-white rounded-lg"
+                className="flex flex-col items-center gap-2 sm:gap-3 py-6 sm:py-8 p-3 sm:p-4 bg-custom-floral-white rounded-lg"
               >
-                <img src={item.icon} alt="icons" className="h-16 sm:h-20 mb-2" />
-                <h1 className="text-sm sm:text-lg font-bold">{item.title}</h1>
+                <img src={item.icon} alt="icons" className="h-12 sm:h-16 lg:h-20 mb-2" />
+                <h1 className="text-xs sm:text-sm md:text-lg font-bold">{item.title}</h1>
               </div>
             ))}
           </div>
         </div>
       </section>
-      <div className="w-full py-20 h-[50vh] sm:h-[60vh] flex flex-col gap-5 items-center bg-black relative">
-        <h1 className="text-white text-3xl sm:text-5xl font-bold">Meet Our Team</h1>
-        <p className="text-gray-400 text-sm sm:text-base">
-          Lorem Ipsum available, but the majority have suffered alteration in some form,<br />
-          by injected humour, or randomised words which don't look even
+
+      <div className="w-full lg:py-10 sm:h-[60vh] flex flex-col gap-5 items-center bg-black">
+        <h1 className="text-white text-2xl sm:text-3xl md:text-5xl font-bold mt-10">Meet Our Team</h1>
+        <p className="text-gray-400 text-sm sm:text-base md:text-lg text-center px-4 sm:px-10 lg:px-20">
+          Lorem Ipsum available, but the majority have suffered alteration in some form, <br />
+          by injected humour, or randomised words which don't look even.
         </p>
       </div>
 
-
-
-      {/* Not Okay   */}
-      <section className="absolute inset-x-0 top-[330vh] -translate-y-1/2 flex flex-col items-center justify-center z-30">
-        <div className="text-start w-full py-20">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full px-6 sm:px-10 lg:px-20">
+      <section className="relative xl:mt-[-200px] flex flex-col items-center justify-center z-30">
+        <div className="w-full py-10 sm:py-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full px-4 sm:px-10 lg:px-20">
             {doctors.map((doc) => (
-              <div key={doc.id} className="flex flex-col items-center gap-3 p-4 rounded-lg">
+              <div key={doc.id} className="flex flex-col items-center gap-4 p-4 rounded-lg">
                 <div
-                  className="w-[250px] sm:w-[280px] lg:w-[300px] h-[350px] sm:h-[380px] lg:h-[400px] bg-cover bg-center rounded-lg"
-                  style={{
-                    backgroundImage: `url(${doc.photo})`,
-                  }}
+                  className="w-[200px] sm:w-[250px] md:w-[280px] lg:w-[300px] h-[300px] sm:h-[350px] md:h-[380px] lg:h-[400px] bg-cover bg-center rounded-lg"
+                  style={{ backgroundImage: `url(${doc.photo})` }}
                 ></div>
                 <div className="mt-4 text-center">
-                  <h1 className="text-xl sm:text-2xl font-bold">{doc.name}</h1>
-                  <p className="text-sm sm:text-lg text-gray-500">{doc.speciality}</p>
+                  <h1 className="text-lg sm:text-xl md:text-2xl font-bold">{doc.name}</h1>
+                  <p className="text-sm sm:text-md md:text-lg text-gray-500">{doc.speciality}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <button className="px-5 py-2 text-lg font-semibold rounded-md bg-custom-primary text-white mt-6">
+        <button className="my-10 px-6 py-3 text-base sm:text-lg font-semibold rounded-md bg-custom-primary text-white">
           View All Items
         </button>
       </section>
 
 
 
+
       {/* okay */}
-      <section className="relative flex flex-col min-h-screen w-full mt-[60vh]">
+      <section className="relative flex flex-col min-h-screen w-full">
         <div className="flex flex-col md:flex-row w-full py-20 px-6 md:px-20">
           <div className="flex w-full md:w-1/2 mb-6 md:mb-0">
-            <h1 className="text-4xl md:text-5xl font-bold text-custom-primary leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-black leading-tight">
               Exclusive <br />Monthly Dental Offers
             </h1>
           </div>
@@ -353,6 +350,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      
 
 
 
