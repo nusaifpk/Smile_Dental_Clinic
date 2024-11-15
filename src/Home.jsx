@@ -21,6 +21,7 @@ import { insurances } from './datas/Insurance'
 import { blogs } from './datas/Blogs'
 import { faqs } from './datas/Faqs'
 import { highlights } from './datas/Highlights'
+import { Call, WhatsApp } from '@mui/icons-material'
 
 
 
@@ -78,33 +79,62 @@ const Home = () => {
         <div className="w-full lg:w-3/4 relative">
           <img src={HomeImg} alt="Dental care promotion" className="object-cover w-full h-full" />
         </div>
+        <a
+            href="mailto:info@smiledentaldubai.com"
+            target="_blank"
+            className="fixed bottom-20 right-5 lg:bottom-24 lg:right-10 border-2 border-custom-green bg-custom-floral-white p-3 rounded-full shadow-lg z-50"
+            aria-label="WhatsApp"
+        >
+          <Call/>
+        </a>
+        <a
+            href="#"
+            target="_blank"
+            className="fixed bottom-5 right-5 lg:bottom-10 lg:right-10 bg-green-500 p-3 rounded-full shadow-lg z-50"
+            aria-label="WhatsApp"
+        >
+          <WhatsApp/>
+        </a>
+        
       </section>
 
 
 
 
       {/* Not Okay */}
-      <section className="absolute inset-x-0 top-[115vh] -translate-y-1/2 flex items-center justify-center z-30 px-6 md:px-12">
-        <div className="flex flex-col md:flex-row justify-between items-center px-6 md:px-10 w-full max-w-screen-xl bg-white p-8 md:p-12 border-2 text-black text-center h-auto rounded-lg shadow-lg">
-          {highlights.map((list) => (
-            <div key={list.id} className="flex flex-col md:flex-row md:items-center md:justify-center gap-10 md:gap-8 items-center w-full">
-              <img src={list.photo} alt="icons" className="h-12 md:h-12" />
-              <span className="flex flex-col items-center md:items-start">
-                <h1 className="text-3xl md:text-4xl font-extrabold text-custom-primary leading-tight">{list.count}</h1>
-                <p className="text-lg md:text-xl text-gray-700 font-light mt-2">{list.title}</p>
-              </span>
-            </div>
-          ))}
+      <section className="relative flex items-center justify-center z-30 w-full">
+        <div className="w-full h-[25vh] sm:h-[30vh] bg-black flex items-center justify-center relative">
+          <div className="flex xl:mt-[-200px] flex-col md:flex-row justify-between items-center w-full max-w-screen-xl bg-white p-6 sm:p-8 md:p-12 border-2 border-gray-300 text-black text-center rounded-lg shadow-lg gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+            {highlights.map((list) => (
+              <div
+                key={list.id}
+                className="flex flex-col items-center md:flex-row gap-4 sm:gap-6 md:gap-8 w-full md:w-auto"
+              >
+                <img src={list.photo} alt="icon" className="h-10 sm:h-12 md:h-14 lg:h-16" />
+                <span className="flex flex-col items-center md:items-start">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-custom-primary leading-tight">
+                    {list.count}
+                  </h1>
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 font-light mt-2">
+                    {list.title}
+                  </p>
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
-      </section>
-    <div className="w-full h-[30vh] bg-black relative"></div>
+       </section>
+
+
+        
+
 
 
 
 
       {/* Okay */}
       <section className="relative flex min-h-screen w-full">
-        <div className="w-full py-10 sm:py-20">
+        <div className="w-full py-10 sm:py-20 mt-[200px] sm:mt-0">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold px-4 sm:px-10 lg:px-20 text-start">
             Transform your smile with <br />
             veneers, whitening, and implants.
@@ -126,6 +156,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+
 
       <div className="w-full lg:py-10 sm:h-[60vh] flex flex-col gap-5 items-center bg-black">
         <h1 className="text-white text-2xl sm:text-3xl md:text-5xl font-bold mt-10">Meet Our Team</h1>
@@ -345,7 +376,7 @@ const Home = () => {
               BOOK NOW
             </button>
           </div>
-          <div className='absolute top-[-90px] right-0 md:top-[-90px]'>
+          <div className='absolute top-[-90px] right-0 md:top-[-132px]'>
             <img src={BottomBannerGirl} alt="Bottom Banner Girl" className='h-[320px] md:h-[520px]' />
           </div>
         </div>
