@@ -126,13 +126,9 @@ const Home = () => {
        </section>
 
 
-        
 
 
-
-
-
-      {/* Okay */}
+      {/* Services */}
       <section className="relative flex min-h-screen w-full">
         <div className="w-full py-10 sm:py-20 mt-[200px] sm:mt-0">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold px-4 sm:px-10 lg:px-20 text-start">
@@ -157,15 +153,17 @@ const Home = () => {
         </div>
       </section>
 
-
+      {/* Team */}
       <div className="w-full lg:py-10 sm:h-[60vh] flex flex-col gap-5 items-center bg-black">
         <h1 className="text-white text-2xl sm:text-3xl md:text-5xl font-bold mt-10">Meet Our Team</h1>
-        <p className="text-gray-400 text-sm sm:text-base md:text-lg text-center px-4 sm:px-10 lg:px-20">
+        <p className="mb-10 text-gray-400 text-sm sm:text-base md:text-lg text-center px-4 sm:px-10 lg:px-20">
           Lorem Ipsum available, but the majority have suffered alteration in some form, <br />
           by injected humour, or randomised words which don't look even.
         </p>
       </div>
 
+
+      {/* Doctors */}
       <section className="relative xl:mt-[-200px] flex flex-col items-center justify-center z-30">
         <div className="w-full py-10 sm:py-20">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full px-4 sm:px-10 lg:px-20">
@@ -191,7 +189,7 @@ const Home = () => {
 
 
 
-      {/* okay */}
+      {/* Offers */}
       <section className="relative flex flex-col min-h-screen w-full">
         <div className="flex flex-col md:flex-row w-full py-20 px-6 md:px-20">
           <div className="flex w-full md:w-1/2 mb-6 md:mb-0">
@@ -273,7 +271,7 @@ const Home = () => {
 
 
 
-      {/* Okay */}
+      {/* Insurance */}
       <section className='relative z-40 flex flex-col min-h-screen w-full'>
         <div className='w-full py-24 px-6 md:px-20'>
           <div className='flex flex-col gap-10'>
@@ -298,7 +296,7 @@ const Home = () => {
 
 
 
-      {/* Okay */}
+      {/* Blogs */}
       <section className='relative z-40 flex flex-col min-h-screen w-full'>
         <div className='w-full py-24 px-6 md:px-20'>
           <div className='flex flex-col md:flex-row justify-between w-full gap-10'>
@@ -326,12 +324,11 @@ const Home = () => {
 
 
 
-      {/* Okay */}
+      {/* Faqs */}
       <section className='relative z-40 flex flex-col min-h-screen w-full'>
         <div className='w-full'>
           <div className='flex flex-col px-6 md:px-20 justify-between w-full gap-10'>
             <h1 className='text-4xl md:text-6xl font-bold mb-10 text-center md:text-left'>FAQs</h1>
-
             {faqs.map((item) => (
               <div key={item.id} className='flex flex-col md:flex-row justify-between items-center mx-6 md:mx-20 p-6 md:p-10 mb-6 rounded-2xl text-start border-2 border-gray-100'>
                 <div className='flex flex-col gap-5 w-full md:w-3/4'>
@@ -358,40 +355,36 @@ const Home = () => {
         </div>
       </section>
 
-.
-      {/* Not Okay */}
-      
-
-<section className="relative">
-  <div className="relative">
-    <div className="px-6 md:px-20 py-20">
-      <img src={BottomBanner} alt="Bottom Banner" className="w-full" />
-    </div>
-
-    <div className="absolute m-10 xl:m-36 top-0 mb-6 mr-6 text-start pr-">
-      <h1 className="text-md mt-12 sm:text-4xl md:text-5xl lg:text-6xl xl:text-5xl text-white font-bold">
-        Book an Appointment With <br />
-        Your Doctor NOW!
-      </h1>
-      
-      <p className="mt-5 text-[8px] sm:text-xl md:text-2xl lg:text-xl font-semibold text-gray-200">
-        Conveniently pay for your dental treatments with your insurance. <br />
-        We accept major insurance providers.
-      </p>
-      <button class="mt-5 px-6 py-2 rounded-md bg-black text-white text-lg sm:text-xl md:text-2xl">
-        BOOK NOW
-      </button>
-    </div>
-
-    <div className="absolute bottom-[56px] right-10 mb-6 md:mr-6 mr-[-30px] ">
-      <img src={BottomBannerGirl} alt="Bottom Banner Girl" className="h-36 md:h-[450px] object-cover" />
-    </div>
-  </div>
-</section>
-
-
 
       
+      {/* Banner */}
+      <section className="relative">
+        <div className="relative">
+          <div className="px-6 md:px-20 py-20">
+            <img src={BottomBanner} alt="Bottom Banner" className="w-full" />
+          </div>
+
+          <div className="absolute m-10 xl:m-36 top-0 mb-6 mr-6 text-start pr-">
+            <h1 className="text-md mt-12 sm:text-4xl md:text-5xl lg:text-6xl xl:text-5xl text-white font-bold">
+              Book an Appointment With <br />
+              Your Doctor NOW!
+            </h1>
+            
+            <p className="mt-5 text-[8px] sm:text-xl md:text-2xl lg:text-xl font-semibold text-gray-200">
+              Conveniently pay for your dental treatments with your insurance. <br />
+              We accept major insurance providers.
+            </p>
+            <button class="mt-5 px-6 py-2 rounded-md bg-black text-white text-lg sm:text-xl md:text-2xl">
+              BOOK NOW
+            </button>
+          </div>
+
+          <div className="absolute bottom-[56px] right-10 mb-6 md:mr-6 mr-[-30px] ">
+            <img src={BottomBannerGirl} alt="Bottom Banner Girl" className="h-36 md:h-[450px] object-cover" />
+          </div>
+        </div>
+      </section>
+
 
     </>
   )
